@@ -12,11 +12,11 @@
 
 2. Run the application using Uvicorn:
 
-   `uvicorn lessons.lesson_1.main:app --reload`
-
+   `uvicorn lessons.lesson_1.main:app --reload` 
+   
+   or 
+   
    `uvicorn <module_name>:<app_instance_name> --reload`
-
-   `uvicorn lessons.lesson_1.main:app --host 0.0.0.0 --port 8000 --reload`
 
 3. Access the application in your browser at:
    `http://localhost:8000`

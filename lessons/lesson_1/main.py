@@ -28,16 +28,6 @@ async def get_model(model_name: ModelName):
 # Define a route that calculates future age based on current age and a fixed number of years
 # Notice how any parameter not defined in the path is treated as a query parameter
 
-# @app.get("/age/{age}")
-# async def calculate_age(age: int, years: int = 50):
-#     future_age = age + years
-#     current_year = datetime.datetime.now().year
-#     future_year = current_year + years
-#     return {"current_age": age, "future_age": future_age, "year": future_year}
-
-
-
-
 @app.get("/age/{age}", tags=["Note the query parameters with default values and optional parameters"])
 async def calculate_age(age: int, years: int = 50, desired: int | None = None, activate: bool = True):
     future_age = age + years
