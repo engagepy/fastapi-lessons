@@ -32,7 +32,7 @@ async def add_contact(
     number: int,
     email: str,
     context: str | None = None,
-    gps: float | None = None,
+    gps: str | None = None,
     group: ContactGroup = ContactGroup.personal
 ):
     contact_info = {
