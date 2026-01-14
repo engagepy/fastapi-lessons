@@ -31,10 +31,10 @@ class ContactParameter(BaseModel):
 
 
 #Route that demonstrates form fields instead of a single body parameter
-@app.post("/greeting/{name}", tags=["Observe request body parameters using Pydantic Model & Enum"])
-async def add_contact(name: str,details: ContactParameter, group: ContactGroup = ContactGroup.personal):
+@app.post("/greeting/", tags=["Observe request body parameters using Pydantic Model & Enum"])
+async def add_contact(details: ContactParameter, group: ContactGroup = ContactGroup.personal):
     contact_info = {
-        "name": name.casefold(),
+        "firstname": details.first_name.casefold(),
         "lastname": details.last_name.casefold(),
         "number": details.number,
         "email": details.email.casefold(),

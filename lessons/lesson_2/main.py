@@ -8,8 +8,8 @@ app = FastAPI(title="Lesson 2 - Multiple Path Parameters", version="1.0.0", desc
 
 #Define an enumeration for model names to restrict valid input values in path parameters
 class ContactParameter(str, Enum):
-    first_name = "first_name"
-    last_name = "last_name"
+    first_name = "firstname"
+    last_name = "lastname"
     number = "number"
     email = "email"
     context = "context"
@@ -27,7 +27,7 @@ class ContactGroup(str, Enum):
 #Route that demonstrates multiple path parameters using Enum
 @app.get("/greeting/{details: ContactParameter}", tags=["Observe multiple path & query parameters using Enum"])
 async def add_contact(
-    name: str,
+    firstname: str,
     lastname: str,
     number: int,
     email: str,
@@ -36,7 +36,7 @@ async def add_contact(
     group: ContactGroup = ContactGroup.personal
 ):
     contact_info = {
-        "name": name,
+        "firstname": firstname,
         "lastname": lastname,
         "number": number,
         "email": email,
