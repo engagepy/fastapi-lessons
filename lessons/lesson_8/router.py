@@ -37,20 +37,20 @@ def check_prefix(value: list[str]) -> list[str]:
     return value
 
 @router.get(
-    "/items/",
+    "/bike_service/",
     summary="Multiple query params with validation",
     description="Demonstrates query or path parameter validation using AfterValidator from Pydantic."
 )
-async def read_items(
+async def bike_repair(
     q: Annotated[list[str] | None, 
         
         Query(
-            title= "Observationbs on car", 
+            title= "Observationbs on bike", 
             max_length=20, 
-            alias="car-damage"),
+            alias="bike-damage"),
             AfterValidator(check_prefix)] = None
             ): # just list use is possible, no str
-    results = {"items": [{"car_number": "HR01X"}, {"service_need": "Oil Change, Tire Rotation"}]}
+    results = {"job_card": [{"bike_number": "HR01X"}, {"service_needs": "Oil Change, Tire Rotation"}]}
     if q:
         results.update({"observations": q})
     return results
