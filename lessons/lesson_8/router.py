@@ -21,6 +21,12 @@ damage_type_prefixes = {
     "tail light damage",
     "door damage",
     "hood damage",
+    "tank damage",
+    "fuel tank damage",
+    "engine damage",
+    "transmission damage",
+    "brake damage",
+    "windshield damage",
     "trunk damage",
     "frame damage",
     "undercarriage damage",
@@ -38,7 +44,7 @@ def check_prefix(value: list[str]) -> list[str]:
 
 @router.get(
     "/bike_service/",
-    summary="Multiple query params with validation",
+    summary="Query or path parameter validation using AfterValidator",
     description="Demonstrates query or path parameter validation using AfterValidator from Pydantic."
 )
 async def bike_repair(

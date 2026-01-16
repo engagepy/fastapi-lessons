@@ -22,7 +22,7 @@ class ContactGroup(str, Enum):
     travel = "travel"
 
 @router.get(
-    "/greeting/{details}",
+    "/contact/{details}",
     summary="Multiple path parameters using Enum",
     description="Demonstrates the use of Enum for path parameters together with optional query parameters."
 )

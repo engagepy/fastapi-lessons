@@ -8,7 +8,7 @@ router = APIRouter(
 
 @router.get(
     "/bike_service/",
-    summary="Multiple query params with validation",
+    summary="Query metadata with title, alias, and max_length",
     description="Demonstrates query metadata addition using title, alias, and max_length using Query class."
 )
 async def bike_repair(

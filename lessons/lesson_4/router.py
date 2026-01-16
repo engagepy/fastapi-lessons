@@ -6,23 +6,23 @@ router = APIRouter(
     tags=["Lesson 4"]
 )
 
-class Item(BaseModel):
+class Movies(BaseModel):
     name: str
     description: str | None = None
-    price: float
-    tax: float | None = None
+    part: int | None = 1
+    timeline: float | None = None
 
 @router.put(
-    "/items/{item_id}",
+    "/movie/{movie_id}",
     summary="Request body with Pydantic model",
     description="Demonstrates request body parameters using a Pydantic model together with path and query parameters."
 )
-async def update_item(
-    item_id: int,
-    item: Item,
-    q: str | None = None
+async def update_movie(
+    movie_id: int,
+    movie: Movies,
+    query: str | None = None
 ):
-    result = {"item_id": item_id, "item": item}
-    if q:
-        result.update({"q": q})
+    result = {"movie_id": movie_id, "movie": movie}
+    if query:
+        result.update({"query": query})
     return result

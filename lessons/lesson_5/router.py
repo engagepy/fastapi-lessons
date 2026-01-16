@@ -7,11 +7,11 @@ router = APIRouter(
 )
 
 @router.get(
-    "/items/",
+    "/pizza/",
     summary="Query parameter validation",
     description="Demonstrates query parameter validation using FastAPI's Query class."
 )
-async def read_items(q: Annotated[str | None, Query(max_length=20)] = None):
+async def pizza(q: Annotated[str | None, Query(max_length=20)] = None):
     results = {
         "items": [
             {"item_name": "Pizza"},

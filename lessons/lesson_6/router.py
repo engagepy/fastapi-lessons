@@ -7,12 +7,12 @@ router = APIRouter(
 )
 
 @router.get(
-    "/items/",
-    summary="Multiple query params with validation",
+    "/pizza/",
+    summary="Multiple query parameters with uniform validation using Query class",
     description="Demonstrates multiple query parameters with uniform validation using FastAPI Query."
 )
-async def read_items(q: Annotated[list[str] | None, Query(max_length=20)] = None):
-    results = {"items": [{"item_name": "Pizza"}, {"toppings": "Basil, Cheese, Tomato Sauce"}]}
+async def pizza(q: Annotated[list[str] | None, Query(max_length=20)] = None):
+    results = {"order": [{"item_name": "Pizza"}, {"toppings": "Basil, Cheese, Tomato Sauce"}]}
     if q:
         results.update({"extras": q})
     return results

@@ -24,7 +24,7 @@ class ContactParameter(BaseModel):
     group: ContactGroup = ContactGroup.personal
 
 @router.post(
-    "/greeting/",
+    "/contact/",
     summary="Request body with Pydantic model and Enum",
     description="Demonstrates a request body using a Pydantic model and an Enum for controlled values."
 )
