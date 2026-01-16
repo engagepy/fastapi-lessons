@@ -33,7 +33,7 @@ class CountryEnum(str, enum.Enum):
 
 
 @router.put(
-    "/country_service/{country}",
+    "/isp/{country}",
     summary="Path parameter validation and metadata using AfterValidator and Enum",
     description="Demonstrates path parameter validation using AfterValidator and Enum from Pydantic."
 )
@@ -43,7 +43,7 @@ async def country_service(
 ):
     results = {
         "service_info": [
-            {"country_code": country}, 
+            {"country_code": country},
             {"service_availability": "Available"}, 
             {"next_activation": random.choice(list(CountryEnum))}
             ]}
