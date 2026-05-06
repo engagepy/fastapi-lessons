@@ -49,5 +49,3 @@ async def read_items() -> list[Basket]:
             tags=["tag3", "tag4"]
         )
     ]
-
-
