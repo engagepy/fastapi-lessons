@@ -10,7 +10,7 @@ router = APIRouter(
     tags=["Lesson 10"])
 
 @router.post(
-    "cart/{user_id}/item/{item_id}",
+    "/cart/{user_id}/item/{item_id}",
     summary="Path parameters numeric validation and metadata using Path",
     description="Demonstrates path parameter numeric validation using Path class."
     )
